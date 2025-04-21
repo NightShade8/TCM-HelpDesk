@@ -80,7 +80,9 @@ echo "Today's date is $current_date"
 ---
 ### **9. Logging**
 #### **Redirect Output to a Log File:**
-```echo "Task completed at $(date)" >> script.log```
+```
+echo "Task completed at $(date)" >> script.log
+```
 ---
 ### **10. Scheduling with Cronjob**
 #### **Automate Script Execution**
