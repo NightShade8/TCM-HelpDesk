@@ -85,9 +85,13 @@ echo "Today's date is $current_date"
 ### **10. Scheduling with Cronjob**
 #### **Automate Script Execution**
 Add to cron:
-	```crontab -e```
+	```
+	crontab -e
+	```
 Example for running every day at midnight:
-``` 0 0 * * * /path/to/script.sh```
+```
+ 0 0 * * * /path/to/script.sh
+ ```
 ---
 
 
