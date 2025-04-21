@@ -4,45 +4,33 @@ A guide to the basic commands and best practices for managing updates and upgrad
 
 ---
 
-## 🔄 Update and Upgrade Basics  
-
-1. **Update:**  
-   Fetches the latest list of available software and their versions from repositories.  
-   ```bash
-   sudo apt update
-```
+## Update and Upgrade Basics  
+1. **Update:**
+Fetches the Lates list of Available software and their versions from repositories
+`	sudo apt update`
 
 2. **Upgrade:**
-	Installs the latest version of software packages (excluding kernel and major system changes)
-	```
-	sudo apt upgrade
-	```
+	Installs the latest version of software packages excluding kernel and major system changes
+`sudo apt upgrade`
 3. **Full Upgrade**
 	Updates all packages, including kernel updates and system-level changes.
-	```
-	sudo apt full-upgrade
-	```
+`	sudo apt full-upgrade`
 ## 🔧 Common Combined Usage
 
 - Run Update and Upgrade in one step:
-	```
-	sudo apt update && sudo apt upgrade -y
-	```
+`	sudo apt update && sudo apt upgrade -y`
 - Run a full upgrade in one step
-	```
-	sudo apt update && sudo apt full-upgrade -y
-	```
+	`sudo apt update && sudo apt full-upgrade -y`
 ---
 ## 🧹 Clean Up After Upgrading
 
 1. Remove Unnecessary Packages:
-```
-sudo apt autoremove
-```
+
+`sudo apt autoremove`
+
 2. Clear Downloaded Package Cache:
-```
-sudo apt clean
-```
+
+`sudo apt clean`
 ---
 ## ✅ Best Practices 
 - Always run ` sudo apt update ` before upgrading
