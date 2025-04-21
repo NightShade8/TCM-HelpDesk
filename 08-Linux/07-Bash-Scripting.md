@@ -70,3 +70,42 @@ while IFS= read -r line; do
 	echo "$line"
 done < file.txt
 ```
+---
+### **8. Executing Commands**
+#### **Use backticks or '$(...)':**
+```
+current_date=$(date)
+echo "Today's date is $current_date"
+```
+---
+### **9. Logging**
+#### **Redirect Output to a Log File:**
+```echo "Task completed at $(date)" >> script.log```
+---
+### **10. Scheduling with Cronjob**
+#### **Automate Script Execution**
+Add to cron:
+	```crontab -e```
+Example for running every day at midnight:
+``` 0 0 * * * /path/to/script.sh```
+---
+
+
+### **Example: Backup Script**
+
+```bash
+#!/bin/bash
+src="/home/user/documents"
+dest="/backup/documents_$(date +%F)"
+	mkdir -p "$dest"
+	cp -r "$src" "$dest"
+	echo "Backup completed at $(date)" >> /var/log/backup.log
+
+```
+---
+
+**Key Tips**:
+
+- Always test scripts with `bash -n script.sh` (syntax check).
+- Use `chmod +x script.sh` to make the script executable.
+- Debug with `bash -x script.sh` for step-by-step execution.
