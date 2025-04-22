@@ -31,6 +31,7 @@ gpudate /force
 ### **Monitor Login Attempts**
 ```powershell
 Get-EventLog -LogName Security | Where-Object{$_.EventID -eq 4625}
+```
 
 ## **📚 Summary**
 Active directory security requires MFA, auditing, enforcing GPOs, restricting privileges, and continuous monitoring to prevent cyber threats. 
