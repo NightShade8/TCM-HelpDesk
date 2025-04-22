@@ -1,104 +1,55 @@
-# 🧰 Remote Support & OpenSSH Quick Reference Guide
+# 🧰 Ticketing with Docker & Peppermint - Quick Reference Guide
 
-A structured summary to quickly identify relevant topics in remote support and SSH-related concepts.
-
----
-
-### 🔍 **Remote Support Overview**
-Defines remote support and explains how IT technicians assist users remotely.
-
-### ⚙️ **How Remote Support Works**
-Describes the steps involved in establishing a remote session between a technician and a user.
-
-### 🛠 **Common Remote Support Tools**
-Lists popular remote access software options and their key features.
-
-### 🧱 **Types of Remote Support**
-Differentiates between attended and unattended remote access.
-
-### 🌟 **Benefits of Remote Support**
-Outlines the advantages of remote support, including efficiency and cost-effectiveness.
-
-### 🔐 **Security Considerations**
-Highlights important security measures for safe remote access.
-
-### ⚡ **Troubleshooting Common Remote Support Issues**
-Identifies common technical problems and provides solutions.
-
-### 📚 **Summary of Remote Support**
-Provides a concise overview of remote support concepts.
+A structured summary to help quickly identify relevant topics related to ticketing systems, Docker deployment, and Peppermint configuration.
 
 ---
 
-### 🧰 **OpenSSH Overview**
-Introduces OpenSSH and its role in secure remote access.
+### 🔍 **Ticketing System Overview**
+Explains what a ticketing system is and how it helps IT teams track and manage user requests.
 
-### ⚙️ **Installing OpenSSH**
-Offers installation steps for different operating systems.
+### 🚀 **Deploying Peppermint Using Docker**
+Step-by-step process for installing and running Peppermint using Docker.
 
-### 🚀 **Starting & Managing SSH Service**
-Lists essential commands to start, stop, and manage SSH services.
+### 🔹 **Key Features of Peppermint**
+Highlights core functionalities of Peppermint, including ticket tracking and user roles.
 
-### 🔄 **Connecting to a Remote Server Using SSH**
-Explains how to use SSH to securely access a remote machine.
+### 🔧 **Managing Peppermint with Docker**
+Essential Docker commands to start, stop, and remove Peppermint containers.
 
-### 🔐 **SSH Authentication Methods**
-Compares password-based and key-based authentication approaches.
-
-### 📦 **Transferring Files Using OpenSSH**
-Describes secure file transfer methods using SCP and SFTP.
-
-### 🔍 **SSH Port Forwarding (Tunneling)**
-Explains techniques for securely forwarding network connections.
-
-### 🔒 **Securing OpenSSH**
-Provides security best practices for SSH configurations.
-
-### ⚡ **Troubleshooting OpenSSH Issues**
-Lists common SSH problems and their respective fixes.
-
-### 📚 **Summary of OpenSSH**
-Summarizes the key principles and functionalities of OpenSSH.
+### ✅ **Why Use Docker for Ticketing?**
+Summarizes the benefits of using Docker to deploy and manage ticketing systems.
 
 ---
 
-### 🛠 **Using Remmina for Remote Access**
-Introduces Remmina as a Linux remote access tool.
+### 📌 **Installing Peppermint on Linux**
+Guides you through setting up Peppermint on a Linux environment using Docker.
 
-### 📦 **Installing Remmina**
-Provides installation instructions for Kali Linux.
+### ⚙️ **Configuring Peppermint**
+Steps for setting up admin credentials, enabling email notifications, and customizing ticket categories.
 
-### 🔄 **Supported Protocols in Remmina**
-Lists various protocols supported by the application.
+### 🔧 **Managing Peppermint**
+Commands for restarting Peppermint, checking logs, and removing the container.
 
-### 🚀 **Using Different Protocols with Remmina**
-Explains how to use RDP, VNC, SSH, and SPICE for remote access.
-
-### 🛠 **Saving Connection Profiles**
-Describes how to save session configurations for easier access.
-
-### ⚙️ **Customizing Settings in Remmina**
-Explains how to adjust display, keyboard, and security preferences.
-
-### 🔍 **Troubleshooting in Remmina**
-Provides solutions for common issues when using Remmina.
-
-### 📚 **Additional Features of Remmina**
-Outlines extra functionalities such as multi-session support.
-
-### 📚 **Summary of Remmina**
-Gives a high-level overview of Remmina and its capabilities.
+### ✅ **Why Use Peppermint?**
+Outlines key advantages of using Peppermint for ticket management.
 
 ---
 
-### 🖥️ **TeamViewer Overview**
-Provides key features and use cases of TeamViewer for remote access.
+### 📝 **Creating a Ticket**
+Explains the process of submitting a ticket in Peppermint's web interface.
+
+### 📌 **Assigning a Ticket**
+Details how to allocate a ticket to a support agent for resolution.
+
+### ✅ **Closing a Ticket**
+Guides you through marking a resolved ticket as closed and adding resolution notes.
+
+### 🔍 **Tracking & Managing Tickets**
+Tips for searching, filtering, and reopening tickets in Peppermint.
+
+### ✅ **Why Use Peppermint for Ticketing?**
+Summarizes the advantages of Peppermint for streamlined ticket tracking and management.
 
 ---
 
-### 📞 **Phone Support Best Practices**
-Lists techniques for effective communication and troubleshooting when assisting users over the phone.
-
----
-
-This README.md serves as a structured quick-reference guide for remote support, SSH, and essential troubleshooting practices. 🚀
+This README.md serves as a quick-reference guide for using Docker and Peppermint to manage IT ticketing systems efficiently. 🚀
