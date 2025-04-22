@@ -13,7 +13,8 @@ Disable-ADAccount -Identity jdoe
 
 ### **Resetting a User Password**
 ```powershell
-Set-ADAccountPassword -Identity jdoe -Reset -NewPassword (ConvertTo-SecureString "NewPass123" -AsPlainText -Force)```
+Set-ADAccountPassword -Identity jdoe -Reset -NewPassword (ConvertTo-SecureString "NewPass123" -AsPlainText -Force)
+```
 
 ## 📋 Group Management
 ### **Creating a New Group**
