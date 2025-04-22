@@ -1,86 +1,120 @@
-# 🏢 Active Directory in Windows Server 2022
+# 🏢 Active Directory PowerShell Commands
 
-## 📌 What is Active Directory?
-Active Directory (AD) in **Windows Server 2022** is a centralized directory service that manages **users, computers, groups, and security policies** within a network.
+## 📌 PowerShell for Active Directory
+PowerShell provides powerful command-line tools for managing **Active Directory** objects efficiently.
 
-✅ **Key Functions:**
-- Authentication & Authorization
-- Resource Management
-- Domain Environment Control
-
----
-
-## 🛠️ Setting Up Active Directory
-
-### **1️⃣ Install AD Domain Services**
-- Open **Server Manager** → **Add Roles and Features**
-- Select **Active Directory Domain Services**
-- Complete installation
-
-### **2️⃣ Promote Server to Domain Controller**
-- Select **"Add a new forest"** and enter domain name
-- Set **DSRM password**
-- Review settings and install
-- Server will reboot with AD DS active
+✅ **Key Benefits:**
+- Automation of repetitive tasks
+- Bulk management of users and groups
+- Advanced filtering and reporting
 
 ---
 
-## 👤 User and Group Management
+## 🛠️ User Management Commands
 
-### **User Management**
-- Open **Active Directory Users and Computers (ADUC)**
-- Navigate to target **OU**
-- Create users with login credentials
-- Set password policies
+### **Create a New User**
+```powershell
+New-ADUser -Name "John Doe" -SamAccountName jdoe -UserPrincipalName jdoe@company.local -Path "OU=Users,DC=company,DC=local" -AccountPassword (ConvertTo-SecureString "Password123" -AsPlainText -Force) -Enabled $true
+```
 
-### **Group Management**
-- Create **Security** or **Distribution** groups
-- Set **Group Scope**: Global, Domain Local, or Universal
-- Add members to groups
+### **Disable a User Account**
+```powershell
+Disable-ADAccount -Identity jdoe
+```
 
----
+### **Reset a User Password**
+```powershell
+Set-ADAccountPassword -Identity jdoe -Reset -NewPassword (ConvertTo-SecureString "NewPass123" -AsPlainText -Force)
+```
 
-## 🖥️ Computer and OU Management
-
-### **Joining a Computer to Domain**
-- On client computer: System → About → Rename this PC
-- Enter domain name and admin credentials
-- Restart to apply changes
-
-### **Creating Organizational Units**
-- In ADUC: Right-click domain → New → OU
-- Name and organize OUs by department or function
+### **Get All Users**
+```powershell
+Get-ADUser -Filter *
+```
 
 ---
 
-## 🔐 Group Policy Management
+## 🔄 Group Management Commands
 
-- Open **Group Policy Management**
-- Create and name GPOs
-- Configure policies for security and settings
-- Link GPOs to OUs or domains
+### **Create a New Group**
+```powershell
+New-ADGroup -Name "IT Support" -GroupScope Global -Path "OU=Groups,DC=company,DC=local"
+```
 
----
-
-## 📊 Maintenance & Monitoring
-
-- Check DC status: `dcdiag /v`
-- Check replication: `repadmin /replsummary`
-- Force Group Policy update: `gpupdate /force`
-- Back up AD using Windows Server Backup
+### **Add a User to a Group**
+```powershell
+Add-ADGroupMember -Identity "IT Support" -Members jdoe
+```
 
 ---
 
-## 🔒 Best Practices
+## 💻 Computer Management Commands
 
-✔ Use structured **OUs** for better management
-✔ Enforce strong **password policies**
-✔ Limit **administrative privileges**
-✔ Keep DCs **updated and patched**
-✔ Implement **account lockout policies**
-✔ Use multiple DCs for **redundancy**
+### **List All Computers**
+```powershell
+Get-ADComputer -Filter *
+```
+
+### **Join Computer to Domain**
+```powershell
+Add-Computer -DomainName "company.local" -Credential "company\admin"
+```
+
+---
+
+## 📝 Sample User Creation Script
+
+```powershell
+# Import Active Directory Module
+Import-Module ActiveDirectory
+
+# Prompt for user details
+$FirstName = Read-Host "Enter First Name"
+$LastName = Read-Host "Enter Last Name"
+$Username = Read-Host "Enter Username"
+$Password = Read-Host "Enter Password" -AsSecureString
+
+# Set user details
+$DisplayName = "$FirstName $LastName"
+$OU = "OU=Users,DC=company,DC=local"
+$UPN = "$Username@company.local"
+$SAM = $Username
+
+# Create new AD User
+New-ADUser `
+    -GivenName $FirstName `
+    -Surname $LastName `
+    -Name $DisplayName `
+    -UserPrincipalName $UPN `
+    -SamAccountName $SAM `
+    -Path $OU `
+    -AccountPassword $Password `
+    -Enabled $true `
+    -ChangePasswordAtLogon $true
+
+Write-Host "User $DisplayName ($Username) has been created successfully!" -ForegroundColor Green
+```
+
+---
+
+## 🔒 Security Commands
+
+### **Force Group Policy Update**
+```powershell
+gpupdate /force
+```
+
+### **Check Domain Controller Status**
+```powershell
+dcdiag /v
+```
+
+### **Check Replication Status**
+```powershell
+repadmin /replsummary
+```
 
 ---
 
 ## 📚 Summary
-Active Directory on **Windows Server 2022** provides robust **user and resource management** through centralized authentication and policy enforcement.
+PowerShell commands make Active Directory management more **efficient**, **scriptable**, and **consistent** across your organization.
